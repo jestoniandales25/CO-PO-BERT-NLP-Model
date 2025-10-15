@@ -1,0 +1,4 @@
+﻿CO,CO_Description,PO1,PO2,PO3,PO4,PO5,PO6,PO7,PO8,PO9,PO10,PO11,PO12,PO13,PO14,PO15
+CO1,"Students should be able to define and explain the key concepts and techniques related to Decision Support Systems (DSS), including business analytics, business intelligence, data mining, machine learning, predictive analytics, text mining, and deep learning, and demonstrate how these tools are used to support decision -making in organizations.",E,E,E,E,I,,I,,,,,,E,,
+CO2,"Students should be able to implement and evaluate various machine learning, text mining, and deep learning models and algorithms to develop and enhance Decision Support System (DSS) technologies, based on the concepts and techniques learned in the course.",D,D,D,E,D,,I,,,,,,D,,
+CO3,Students should be able to create and present a prototype Decision Support System (DSS) solution that integrates appropriate analytics or machine learning techniques,D,,,,D,,,,,,,,D,,
