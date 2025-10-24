@@ -1,0 +1,74 @@
+{
+  "CO_DATA": [
+    {
+      "CO": "CO1",
+      "CO_Description": "The students will be able to understand and experience the entrepreneurial process through generation of creative ideas."
+    },
+    {
+      "CO": "CO2",
+      "CO_Description": "The students will be able to: 1) understand the market needs or provide a solution to a key problem, and 2) explore the feasibility and creation of a business enterprise."
+    },
+    {
+      "CO": "CO3",
+      "CO_Description": "The students will be able to implement their creative ideas into real products/services."
+    },
+    {
+      "CO": "CO4",
+      "CO_Description": "The students will be able to experience the dynamics of participating on a business/venture team, develop a business model, pitch to potential investors."
+    }
+  ],
+  "PO_DATA": [
+    {
+      "PO": "PO-a",
+      "PO_Description": "Demonstrate innovative and critical thinking in the application and integration of knowledge in mathematics and science to solve technology and engineering problems through defined and applied systems to justify the appropriateness of the solution, both tangible and intangible new ideas or ways of approaching things to create possibilities and opportunities."
+    },
+    {
+      "PO": "PO-b",
+      "PO_Description": "Identify, formulate, analyze and solve broadly-defined technology and engineering problems through analytical tools and application of knowledge of diversity and multicultural competencies to promote equity and social justice in the community through shared responsibility for collaborative work and valuing the individual contributions made by each team member."
+    },
+    {
+      "PO": "PO-c",
+      "PO_Description": "Design a system, component, or process to meet the desired needs within realistic constraints such as economic, environmental, social, political, ethical, health and safety, manufacturability, and sustainability, in accordance to standards and work collaboratively and respectfully as member and leader of diverse team and community in sustainable development."
+    },
+    {
+      "PO": "PO-d",
+      "PO_Description": "Conduct investigations, design and experiments, as well as to analyze and interpret data responsibly and sustainably on current economic demands at local, national and global levels in the face of adverse circumstances and uncertainties."
+    },
+    {
+      "PO": "PO-e",
+      "PO_Description": "Demonstrate expertise and articulate views, thoughts and ideas effectively using modern enabling technology and engineering tools necessary for the practice in a specialized discipline of study."
+    },
+    {
+      "PO": "PO-f",
+      "PO_Description": "Communicate ideas clearly through knowledge of contemporary issues in the development of quality human capital, technology solutions and enterprise to engage in independent and life-long learning at local, national, and global levels."
+    },
+    {
+      "PO": "PO-g",
+      "PO_Description": "Understand the impact of technology and engineering solutions in the face of adverse circumstances and uncertainties through broad education necessary for sustainable economic and environmental development in local, national and global context."
+    },
+    {
+      "PO": "PO-h",
+      "PO_Description": "Understand professional, social and ethical responsibility in the application of diverse knowledge and multicultural competencies to promote equity and social justice in the community."
+    },
+    {
+      "PO": "PO-i",
+      "PO_Description": "Function independently, collaboratively and effectively as individual, member or leader of multidisciplinary, trans-disciplinary and multi-cultural teams through modern communication tools."
+    },
+    {
+      "PO": "PO-j",
+      "PO_Description": "Communicate ideas, perspectives, and values effectively, clearly and persuasively in English (and as much as possible local language and Filipino) as well as be able to listen and comprehend and write effective reports, design documentation, make effective presentations, and give and receive clear instructions."
+    },
+    {
+      "PO": "PO-k",
+      "PO_Description": "Effectively demonstrate knowledge and understanding of technology and engineering management principles as a member and leader in a team, to manage projects and in multidisciplinary environments."
+    },
+    {
+      "PO": "PO-l",
+      "PO_Description": "Recognize the need for, and engage in life-long learning to discuss and demonstrate expertise through integration of ideas, methods, theory and practice in the latest development in relevant technologies."
+    },
+    {
+      "PO": "PO-m",
+      "PO_Description": "Able to think critically and creatively; and apply analytical and quantitative reasoning to address complex challenges and everyday problems through participation and engagement in research and development aligned to local and national"
+    }
+  ]
+}

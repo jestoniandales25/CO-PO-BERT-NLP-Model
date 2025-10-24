@@ -1,0 +1,78 @@
+{
+  "CO_DATA": [
+    {
+      "CO": "CO1",
+      "CO_Description": "Students should be able to define and explain the key concepts and techniques related to Decision Support Systems (DSS), including business analytics, business intelligence, data mining, machine learning, predictive analytics, text mining, and deep learning, and demonstrate how these tools are used to support decision -making in organizations."
+    },
+    {
+      "CO": "CO2",
+      "CO_Description": "Students should be able to implement and evaluate various machine learning, text mining, and deep learning models and algorithms to develop and enhance Decision Support System (DSS) technologies, based on the concepts and techniques learned in the course."
+    },
+    {
+      "CO": "CO3",
+      "CO_Description": "Students should be able to create and present a prototype Decision Support System (DSS) solution that integrates appropriate analytics or machine learning techniques"
+    }
+  ],
+  "PO_DATA": [
+    {
+      "PO": "PO1",
+      "PO_Description": "Apply knowledge of computing, science, and mathematics in solving computing/IT -related problems through critical and creative thinking."
+    },
+    {
+      "PO": "PO2",
+      "PO_Description": "Use current best practices and standards in solving complex computing/IT-related problems and requirements;"
+    },
+    {
+      "PO": "PO3",
+      "PO_Description": "Analyze complex computing/ITrelated problems by applying analytical and quantitative reasoning; and define the computing requirements appropriate to its solution;"
+    },
+    {
+      "PO": "PO4",
+      "PO_Description": "Identify and analyze user needs and take them into account in the selection, creation, evaluation and administration of computer basedsystems;"
+    },
+    {
+      "PO": "PO5",
+      "PO_Description": "Design creatively, implement and evaluate different computer-based systems, processes, components, or programs to meet desired needs and requirements under various constraints;"
+    },
+    {
+      "PO": "PO6",
+      "PO_Description": "Integrate effectively the IT-based solutions into the user environment with appropriate consideration for public health and safety, cultural, societal, and environmental concerns;"
+    },
+    {
+      "PO": "PO7",
+      "PO_Description": "Select, adapt and apply appropriate techniques, resources, skills, and modern computing tools to complex computing activities, with an understanding of the limitations;"
+    },
+    {
+      "PO": "PO8",
+      "PO_Description": "Function effectively as individual, or work collaboratively and respectfully as a member or leader in diverse development teams and in multidisciplinary and/or multicultural settings;."
+    },
+    {
+      "PO": "PO9",
+      "PO_Description": "Assist in the creation of an effective IT project plan;"
+    },
+    {
+      "PO": "PO10",
+      "PO_Description": "Communicate effectively in both oral and in written form by being able to deliver and comprehend instructions clearly; and present persuasively to diverse audience the complex computing / IT-related ideas and perspectives;"
+    },
+    {
+      "PO": "PO11",
+      "PO_Description": "Assess local and global impact of computing information technology on individuals, organizations, and society;"
+    },
+    {
+      "PO": "PO12",
+      "PO_Description": "Act in recognition of professional, ethical, legal, security and social responsibilities in the utilization of information technology;"
+    },
+    {
+      "PO": "PO13",
+      "PO_Description": "Recognize the need to engage in independent learning and be at pace with the latest developments in a specialized field in IT, with emphasis on Database Management and Information System; Network Design and Administration; and Computer Vision and Image processing for continual development as a computing professional;"
+    },
+    {
+      "PO": "PO14",
+      "PO_Description": "Participate in generation of new knowledge; or in research and development projects aligned to local and national development agenda or goals with the end view of contributing to the local and national economy; and"
+    },
+    {
+      "PO": "PO15",
+      "PO_Description": "Preserve and Promote “Filipino historical and cultural heritage”."
+    }
+  ]
+}
