@@ -17,10 +17,10 @@ SIMILARITY_THRESHOLD = 0.75
 # HELPER FUNCTIONS
 # ===============================
 def extract_data_from_json(file_path: str):
-    """Extract CO_DATA and PO_DATA arrays from a JSON file."""
+    """Extract CourseOutcome and ProgramOutcome arrays from a JSON file."""
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    return pd.DataFrame(data["CO_DATA"]), pd.DataFrame(data["PO_DATA"])
+    return pd.DataFrame(data["CourseOutcome"]), pd.DataFrame(data["ProgramOutcome"])
 
 def preprocess_text(text: str) -> str:
     """Convert text to lowercase and remove punctuation."""
@@ -48,8 +48,8 @@ def generate_embeddings(text_list, tokenizer, model):
 co_data, po_data = extract_data_from_json(DATA_FILE)
 
 # Clean descriptions
-co_data['cleaned_CO_Description'] = co_data['CO_Description'].apply(preprocess_text)
-po_data['cleaned_PO_Description'] = po_data['PO_Description'].apply(preprocess_text)
+co_data['cleaned_course_outcome_description'] = co_data['course_outcome_description'].apply(preprocess_text)
+po_data['cleaned_program_outcome_description'] = po_data['program_outcome_description'].apply(preprocess_text)
 
 # ===============================
 # LOAD BERT MODEL
@@ -60,8 +60,8 @@ model = DistilBertModel.from_pretrained('distilbert-base-uncased')
 # ===============================
 # GENERATE EMBEDDINGS
 # ===============================
-po_data['po_embeddings'] = generate_embeddings(po_data['cleaned_PO_Description'].tolist(), tokenizer, model)
-co_data['co_embeddings'] = generate_embeddings(co_data['cleaned_CO_Description'].tolist(), tokenizer, model)
+po_data['po_embeddings'] = generate_embeddings(po_data['cleaned_program_outcome_description'].tolist(), tokenizer, model)
+co_data['co_embeddings'] = generate_embeddings(co_data['cleaned_course_outcome_description'].tolist(), tokenizer, model)
 
 po_embeddings_array = np.array(po_data['po_embeddings'].tolist())
 co_embeddings_array = np.array(co_data['co_embeddings'].tolist())
@@ -74,12 +74,12 @@ similarity_matrix = cosine_similarity(po_embeddings_array, co_embeddings_array)
 # ===============================
 # MAP RELATIONSHIPS
 # ===============================
-relationships_df = pd.DataFrame(index=co_data['CO'], columns=po_data['PO'])
+relationships_df = pd.DataFrame(index=co_data['course_outcome_code'], columns=po_data['program_outcome_code'])
 
 for i in range(similarity_matrix.shape[0]):
     for j in range(similarity_matrix.shape[1]):
-        po = po_data.loc[i, 'PO']
-        co = co_data.loc[j, 'CO']
+        po = po_data.loc[i, 'program_outcome_code']
+        co = co_data.loc[j, 'course_outcome_code']
         relationships_df.loc[co, po] = 1 if similarity_matrix[i, j] >= SIMILARITY_THRESHOLD else 0
 
 print("\n=== CO–PO Relationship Matrix ===")
