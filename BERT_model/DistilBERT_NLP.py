@@ -5,31 +5,31 @@ import torch
 import numpy as np
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
-from transformers import BertModel, BertTokenizer
+from transformers import DistilBertModel, DistilBertTokenizer
 
 # ===============================
 # CONFIGURATION
 # ===============================
-DATA_FILE = "dummy_data_elective3.json"
-SIMILARITY_THRESHOLD = 0.7
+DATA_FILE = "dummy_data.json"
+SIMILARITY_THRESHOLD = 0.75
 
 # ===============================
 # HELPER FUNCTIONS
 # ===============================
-def preprocess_text(text: str) -> str:
-    """Convert text to lowercase and remove punctuation."""
-    text = text.lower()
-    text = ''.join([c for c in text if c not in string.punctuation])
-    return text
-
 def extract_data_from_json(file_path: str):
     """Extract CO_DATA and PO_DATA arrays from a JSON file."""
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     return pd.DataFrame(data["CO_DATA"]), pd.DataFrame(data["PO_DATA"])
 
+def preprocess_text(text: str) -> str:
+    """Convert text to lowercase and remove punctuation."""
+    text = text.lower()
+    text = ''.join([c for c in text if c not in string.punctuation])
+    return text
+
 def generate_embeddings(text_list, tokenizer, model):
-    """Generate BERT embeddings for text."""
+    """Generate DistilBERT embeddings for text."""
     encoded_input = tokenizer(
         text_list,
         padding=True,
@@ -54,8 +54,8 @@ po_data['cleaned_PO_Description'] = po_data['PO_Description'].apply(preprocess_t
 # ===============================
 # LOAD BERT MODEL
 # ===============================
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertModel.from_pretrained('bert-base-uncased')
+tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
+model = DistilBertModel.from_pretrained('distilbert-base-uncased')
 
 # ===============================
 # GENERATE EMBEDDINGS
