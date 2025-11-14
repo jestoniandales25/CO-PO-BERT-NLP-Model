@@ -82,5 +82,11 @@ for i in range(similarity_matrix.shape[0]):
         co = co_data.loc[j, 'course_outcome_code']
         relationships_df.loc[co, po] = 1 if similarity_matrix[i, j] >= SIMILARITY_THRESHOLD else 0
 
-print("\n=== CO–PO Relationship Matrix ===")
-print(relationships_df)
+import datetime
+timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+filename = f"co_po_matrix_{timestamp}.json"
+
+matrix_dict = relationships_df.to_dict(orient="index")
+
+with open(filename, "w", encoding="utf-8") as f:
+    json.dump(matrix_dict, f, indent=4)
