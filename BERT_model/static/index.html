@@ -1,0 +1,48 @@
+<!-- static/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>CO-PO JSON Uploader</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 24px; }
+    pre { background: #f3f3f3; padding: 12px; border-radius: 6px; }
+    button { padding: 8px 12px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>CO → PO Mapping</h1>
+  <p>Upload your JSON file (CourseOutcome & ProgramOutcome arrays)</p>
+  <input id="fileInput" type="file" accept=".json"/>
+  <button id="runBtn">Upload & Run Model</button>
+
+  <h3>Result</h3>
+  <pre id="output">No result yet.</pre>
+
+  <script>
+    document.getElementById("runBtn").addEventListener("click", async () => {
+      const input = document.getElementById("fileInput");
+      if (!input.files || input.files.length === 0) {
+        alert("Choose a JSON file first");
+        return;
+      }
+      const file = input.files[0];
+      const form = new FormData();
+      form.append("file", file);
+
+      document.getElementById("output").textContent = "Processing...";
+
+      try {
+        const resp = await fetch("/upload-json", {
+          method: "POST",
+          body: form
+        });
+        const data = await resp.json();
+        document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        document.getElementById("output").textContent = "Error: " + err;
+      }
+    });
+  </script>
+</body>
+</html>

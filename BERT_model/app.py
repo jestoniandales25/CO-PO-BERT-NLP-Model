@@ -1,4 +1,4 @@
-# model.py
+import gradio as gr
 import json
 import string
 import torch
@@ -48,20 +48,34 @@ def process_co_po(json_data: dict):
         columns=po_data["program_outcome_code"]
     )
 
-    # Fill matrix
-    for i in range(len(po_data)):     # PO index
-        for j in range(len(co_data)): # CO index
+    for i in range(len(po_data)):
+        for j in range(len(co_data)):
             po_code = po_data.loc[i, "program_outcome_code"]
             co_code = co_data.loc[j, "course_outcome_code"]
-
             relationships.loc[co_code, po_code] = (
                 1 if similarity_matrix[i, j] >= SIMILARITY_THRESHOLD else 0
             )
 
-    # Convert to EXACT JSON format
     result_json = {
         co: {po: int(relationships.loc[co, po]) for po in relationships.columns}
         for co in relationships.index
     }
 
-    return result_json 
+    return result_json
+
+# Wrapper function for Gradio
+def process_json(file_obj):
+    with open(file_obj.name, "r") as f:
+        json_data = json.load(f)
+    return process_co_po(json_data)
+
+ui = gr.Interface(
+    fn=process_json,
+    inputs=gr.File(label="Upload JSON File"),
+    outputs=gr.JSON(label="Processed Output"),
+    title="CO-PO NLP Model",
+    description="Upload your JSON file and process it using BERT NLP Model."
+)
+
+if __name__ == "__main__":
+    ui.launch()
